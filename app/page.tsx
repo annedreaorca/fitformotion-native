@@ -1,101 +1,75 @@
-import Image from "next/image";
+import { Button } from "@heroui/button";
+
+import "animate.css";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const cardData = [
+    {
+      // icon: IconChartHistogram,
+      title: "See Your Progress In Motion",
+      body: "Stay connected to your fitness progress through specialized tracking and customizable visualization tools.",
+    },
+    {
+      // icon: IconBarbell,
+      title: "Find Your Ideal Workout",
+      body: "Explore a wide library of workouts complete with instructions, videos, and useful tips on how to perform all kinds of exercises.",
+      className: "",
+    },
+    {
+      // icon: IconUserScan,
+      title: "Personalized Fitness Programs",
+      body: "Choose from our extensive collection of exercises to make personalized plans for your goals, timetable, and ability.",
+    },
+    {
+      // icon: IconClipboardData,
+      title: "Record & Track Your Workouts",
+      body: "Stay motivated and keep your pace by tracking workouts in real time.",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <main>
+      <section className="relative px-3 max-md:px-[30px] max-md:mt-[-30px] mx-auto flex justify-center hero-section max-[767px]:items-center h-screen bg-black">
+        <div className="flex items-center justify-center max-[767px]:pt-[100px] max-[767px]:pb-[100px] max-[767px]:flex-col gap-5 page-width  animate__animated animate__fadeInLeft max-[768]:animate__animated animate__fadeInUp duration-1000">
+          <div className="flex flex-col justify-center items-center text-left max-[767px]:items-center max-[767px]:pt-[100px] max-[580px]:pt-[50px]">
+            <div className="flex justify-center mb-5">
+              <span className="section-label">FITFORMOTION</span>
+            </div>
+            <h1 className="hero-headline uppercase text-white leading-[60px] text-center">
+              Where <span className="red">Fitness</span>
+              <br />
+              Finds Its <span className="red">Form</span>
+              <br />
+              In Every <span className="red">Motion!</span>
+            </h1>
+            <p className="text-zinc-500 mt-6 mb-6 text-center description">
+              Easily find exercises, customize your routine, and stay motivated
+              as you achieve your fitness goals.
+            </p>
+            <div className="flex gap-2 justify-center max-[768px]:flex-col max-[768px]:items-center mt-6 w-[90%]">
+              <Button
+                className="bg-primary-800 text-white w-[150px] max-[768px]:w-full border-1 border-primary-800"
+                as={Link}
+                prefetch={false}
+                href="/dashboard"
+                size="lg"
+              >
+                Login
+              </Button>
+              <Button
+                className="bg-transparent text-white w-[150px] max-[768px]:w-full border-1 border-white max-[768px]:mt-3"
+                as={Link}
+                prefetch={false}
+                href="/features"
+                size="lg"
+              >
+                Register
+              </Button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+    </main>
   );
 }

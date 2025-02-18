@@ -5,7 +5,7 @@ const config: CapacitorConfig = {
   appName: 'fitformotion-native',
   webDir: 'out',
   server: {
-    url: 'http://localhost:3000',
+    url: 'http://172.20.112.1:3000',
     cleartext: true
   }
 };
